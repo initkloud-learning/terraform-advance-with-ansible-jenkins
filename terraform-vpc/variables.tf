@@ -29,6 +29,38 @@ variable "nat_ami_ids" {
   description = "AWS AMI ids for Nat instance."
   default = {
     "us-east-1" : "ami-0022f774911c1d690"
-    "us-east-2" : "ami-07e28d2a4c873cf5c"
+    "us-east-2" : "ami-0022f774911c1d690"
   }
+}
+
+variable "ec2_web_ami" {
+  type        = string
+  default     = "ami-0022f774911c1d690"
+  description = "AWS web AMI."
+}
+
+variable "web_instance_type" {
+  type        = string
+  default     = "t2.micro"
+  description = "AWS web instance type."
+}
+
+variable "web_ec2_count" {
+  type        = number
+  default     = 2
+  description = "AWS web instance type."
+}
+
+variable "initkloud_web_tags" {
+  type = map(string)
+  default = {
+    Name = "initkloud_web_ec2"
+  }
+  description = "AWS web instance type."
+}
+
+variable "initkloud_web_app_bucket" {
+  type        = string
+  default     = "initkloud-apache-dev"
+  description = "AWS bucket name."
 }

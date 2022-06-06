@@ -6,7 +6,7 @@ resource "aws_instance" "initkloud_net_instance" {
     Name = "initkloud_net_instance"
   }
 
-  source_dest_check = false
+  source_dest_check      = false
   vpc_security_group_ids = [aws_security_group.initkloud_nat_instance_sg.id]
 
 }
